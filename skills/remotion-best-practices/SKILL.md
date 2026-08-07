@@ -57,20 +57,3 @@ To find and read current Remotion documentation, load [Remotion Docs](./remotion
 ## Upgrading
 
 To upgrade Remotion, related packages, compatible Mediabunny packages, and installed Remotion Agent Skills, load [Remotion Upgrade](./remotion-upgrade/REFERENCE.md).
-
-
-## Agent client troubleshooting
-
-When the agent client provides its own browser, first try starting Remotion Studio without opening the system browser:
-
-```bash
-npx remotion studio --no-open
-```
-
-Only if that fails with file watcher limits such as `EMFILE: too many open files, watch`, retry with polling:
-
-```bash
-npx remotion studio --no-open --webpack-poll 1000
-```
-
-If Studio still fails to start, ask the user to start it manually from their terminal and then continue using the already-running Studio. Errors while launching Chromium from a sandboxed agent client are likely caused by the client sandbox rather than the Remotion project.
