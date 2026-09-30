@@ -1,7 +1,7 @@
 ---
 name: remotion-best-practices
 description: Router for all Remotion skills
-version: 4.0.530
+version: 4.0.531
 ---
 
 ## Preserve user changes
@@ -38,22 +38,17 @@ By structuring the Remotion markup well, we can allow users to interactively cha
 
 If the user asks to "make" a video, "create" a video, etc.
 Don't render the video by default unless they are very explicit. They want to instead see an interactive preview.
-After creating or updating the video, start the preview server by default:
+As soon as the project can run, start Studio and open the preview in the browser before building or editing the composition. Keep it open while you work so the user can watch progress and steer.
 
-Always pass `--no-open` so the system browser is not opened:
+Run Studio without `--no-open` so it opens the browser automatically:
 
 ```bash
-npx remotion studio --no-open
+npx remotion studio
 ```
 
 This will start a long-running process and print the server URL for the preview.  
-If the server is already started, it will print the URL.
-Open the exact URL in the agent client's available browser, such as the integrated browser in GitHub Copilot (VS Code) or Cursor. If no browser tool is available, keep the preview server running and provide the URL to the user.
+If the server is already started, it will print the URL and refocus the browser.
 You can visit a specific composition by navigating to `/[composition-id]`, for example `http://localhost:3000/MapAnimation`.
-
-:::note
-The Studio supports WebMCP tools.
-:::
 
 ### More options
 
