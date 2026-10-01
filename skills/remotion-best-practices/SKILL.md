@@ -1,7 +1,7 @@
 ---
 name: remotion-best-practices
 description: Router for all Remotion skills
-version: 4.0.531
+version: 4.0.532
 ---
 
 ## Preserve user changes
@@ -46,8 +46,9 @@ Run Studio without `--no-open` so it opens the browser automatically:
 npx remotion studio
 ```
 
-This will start a long-running process and print the server URL for the preview.  
+This will start a long-running process and print the server URL for the preview.
 If the server is already started, it will print the URL and refocus the browser.
+Open the exact URL in the agent client's available browser, such as the integrated browser in GitHub Copilot (VS Code) or Cursor. Verify that Studio loads. If no browser tool is available, keep the preview server running and provide the URL to the user.
 You can visit a specific composition by navigating to `/[composition-id]`, for example `http://localhost:3000/MapAnimation`.
 
 ### More options
